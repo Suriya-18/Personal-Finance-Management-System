@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finance Tracker</title>
+</head>
+<body>
+    <h1>Finance Tracker</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="type" placeholder="Type (Income/Expense)" required><br>
+        <input type="number" name="amount" placeholder="Amount" required><br>
+        <input type="text" name="description" placeholder="Description" required><br>
+        <button type="submit">Add Transaction</button>
+    </form>
+
+    <h2>Transactions</h2>
+    <ul>
+        {% for transaction in transactions %}
+            <li>{{ transaction[1] }}: {{ transaction[2] }} - {{ transaction[3] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
